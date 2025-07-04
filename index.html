@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
         * {
@@ -19,12 +17,14 @@
 
         body {
             font-family: 'Lato', sans-serif;
-            background: #ffffff;
+            background: #f8fbf9;
             color: #000000;
             overflow-x: hidden;
             height: auto;
             min-height: 100%;
             overflow-y: auto;
+            width: 100%;
+            max-width: 100vw;
         }
 
         .hero-section {
@@ -37,8 +37,6 @@
             justify-content: center;
             text-align: center;
             overflow: hidden;
-            
-
         }
 
         .hero-section::before {
@@ -99,34 +97,49 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mobile-specific adjustments */
         @media screen and (max-width: 700px) {
             .hero-section {
-                height: auto; /* Reduced height for mobile */
-                min-height: auto; /* Reduced minimum height for mobile */
+                height: auto;
+                min-height: 400px;
+                padding: 2rem 0.75rem;
+                width: 100%;
+                max-width: 100vw;
+                box-sizing: border-box;
+            }
+
+            .hero-content {
+                width: 100%;
+                max-width: 100%;
+                padding: 0 0.5rem;
+                box-sizing: border-box;
             }
 
             .hero-title {
-                font-size: clamp(1.8rem, 6vw, 2.5rem); /* Slightly smaller font size */
-                margin-bottom: 1rem; /* Reduced margin for compactness */
+                font-size: clamp(1.6rem, 5vw, 2.2rem);
+                margin-bottom: 1rem;
+                word-wrap: break-word;
             }
 
             .hero-badge {
-                font-size: 0.8rem; /* Slightly smaller badge text */
-                padding: 0.4rem 1.2rem; /* Slightly smaller padding */
-                margin-bottom: 0.8rem; /* Reduced margin */
+                font-size: 0.75rem;
+                padding: 0.4rem 1rem;
+                margin-bottom: 0.8rem;
             }
         }
 
         .section {
-            padding: 1.5rem 3rem;
-            
+            padding: 1.5rem 1rem;
+            width: 100%;
+            max-width: 100vw;
+            box-sizing: border-box;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 1rem;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .section-title {
@@ -136,7 +149,7 @@
             margin-bottom: 1rem;
             color: #204a22;
             position: relative;
-            padding-top: 2rem; /* adjust the value as needed */
+            padding-top: 2rem;
             padding-bottom: 2rem;
         }
 
@@ -153,44 +166,38 @@
         }
 
         .usp-card {
-            /* background: white !important; */
-            border: none !important;
-            box-shadow: none !important;
+            background: white;
+            border: none;
+            box-shadow: none;
+            text-align: center;
+            padding: 1rem;
         }
 
-        
-
         .usp-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(32, 74, 34, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(32, 74, 34, 0.1);
         }
 
         .usp-icon {
-    background-color: #D1E8D2;  /* Light green circle background */
-    color: #204a22;             /* Dark green icon color */
-    font-size: 1.5rem;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 10px auto;
-}
+            background-color: #D1E8D2;
+            color: #204a22;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+        }
 
-.usp-title {
-    color: #204a22;
-    font-weight: 700;
-    font-size: 1rem;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.usp-text {
-    font-size: 0.9rem;
-    color: #666;
-    text-align: center;
-}
+        .usp-title {
+            color: #204a22;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0;
+            text-align: center;
+        }
 
         .cta-button {
             display: inline-block;
@@ -228,45 +235,87 @@
             box-shadow: 0 10px 25px rgba(32, 74, 34, 0.3);
         }
 
-        .nutrition-table {
-    background: #ffffff;
-    border-radius: 10px;
-    border: 1px solid #000000;
-    overflow: hidden;
-    margin: 3rem 0;
-    overflow-x: auto;
-}
+        .nutrition-card {
+            background: #e8f0e9;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem auto;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(32, 74, 34, 0.1);
+            text-align: center;
+        }
 
-.nutrition-table table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 300px;
-    background-color: #ffffff;
-    table-layout: auto; 
-}
+        .nutrition-header {
+            color: #204a22;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
 
-.nutrition-table th,
-.nutrition-table td {
-    border: 1px solid #000000; /* ✅ black borders on all sides */
-    padding: 0.8rem 1rem;
-    font-size: clamp(0.8rem, 2vw, 0.9rem);
-    color: #000000;
-    text-align: left;
-}
+        .nutrition-subtitle {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
 
-.nutrition-table th {
-    font-weight: 700;
-    background-color: #ffffff; /* ✅ keep it white */
-}
+        .nutrition-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #d0d0d0;
+        }
 
-        .highlight {
+        .nutrition-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .nutrition-label {
+            flex: 1;
+            text-align: left;
+        }
+
+        .nutrition-main-label {
+            font-weight: 700;
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .nutrition-sub-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+
+        .nutrition-value {
+            font-weight: 700;
+            color: #333;
+            font-size: 1rem;
+            text-align: right;
+            min-width: 60px;
+        }
+
+        .nutrition-comparison {
+            font-size: 0.85rem;
+            color: #6f9471;
+            font-style: italic;
+            margin-top: 0.2rem;
+            text-align: left;
+        }
+
+        .highlight-value {
             color: #204a22;
             font-weight: 700;
         }
 
-        .note {
-            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-            color: #6f9471;
+        .calcium-note {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+            margin-top: 1rem;
             font-style: italic;
         }
 
@@ -275,19 +324,19 @@
         }
 
         .team-content {
-    display: flex;
-    flex-direction: column; /* ✅ Text below image */
-    gap: 2rem;
-    align-items: center;
-}
-/* On tablets/desktops: Side-by-side layout */
-@media (min-width: 768px) {
-    .team-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* side-by-side */
-        gap: 4rem;
-    }
-}
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .team-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+            }
+        }
 
         .team-image {
             border-radius: 20px;
@@ -305,6 +354,7 @@
             font-size: clamp(1rem, 2vw, 1.1rem);
             line-height: 1.8;
             color: #333;
+            text-align: justify;
         }
 
         .team-text p {
@@ -317,235 +367,195 @@
             padding: 0rem 0;
         }
 
-        .pricing-slider {
-            position: relative;
-            overflow: visible !important;
-            margin: 3rem 0;
-            width: 100%;
-            max-width: 300px;
-            margin: 3rem auto;
-        }
-
         .pricing-container {
             display: flex;
-            transition: transform 0.3s ease;
-            gap: 1.5rem;
-            width: calc(400% + 3rem);
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 3rem 0;
         }
 
-        /* Desktop - Show all cards in a row */
-        @media (min-width: 992px) {
-            .pricing-slider {
-                max-width: none;
-                overflow: visible;
-            }
-            
-            .pricing-container {
-                width: 100%;
-                justify-content: center;
-                transform: none !important;
-            }
-            
-            .slider-nav {
-                display: none;
-            }
-            
-            .slider-dots {
-                display: none;
-            }
+        /* Mobile Slider Styles */
+        .pricing-slider-container {
+            display: none;
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            margin: 2rem auto;
+            overflow: visible;
+            padding: 0 1rem;
+        }
+
+        .pricing-slider {
+            display: flex;
+            transition: transform 0.3s ease;
+            width: 300%;
+            overflow: visible;
+        }
+
+        .pricing-slide {
+            width: 33.333%;
+            flex-shrink: 0;
+            padding: 20px 5px 0;
+            overflow: visible;
         }
 
         .pricing-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #204a22;
             border-radius: 20px;
-            padding: 0.5rem;
+            padding: 1.5rem 1rem;
             text-align: center;
             position: relative;
             transition: transform 0.3s ease;
-            width: 280px;
+            width: 100%;
+            max-width: 280px;
+            min-width: 200px;
             flex-shrink: 0;
-            transform: scale(1.02);
-            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            overflow: visible;
         }
 
         .pricing-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(32, 74, 34, 0.2);
         }
 
         .pricing-card.popular {
             border-color: #204a22;
-            transform: scale(1.10);
+            border-width: 2px;
+        }
+
+        .slider-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            gap: 0.5rem;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: #204a22;
         }
 
         .popular-badge {
             position: absolute;
-            top: -20px;
+            top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background: #b2deb4;
-            color: #204a22;
-            padding: 0.5rem 0.5rem;
+            background: #204a22;
+            color: white;
+            padding: 0.5rem 1rem;
             border-radius: 20px;
-            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+            font-size: 0.8rem;
             font-weight: 700;
         }
 
         .price-amount {
-            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-size: 2.5rem;
             font-weight: 900;
             margin: 1rem 0;
+            color: #204a22;
         }
 
         .price-original {
             text-decoration: line-through;
             opacity: 0.7;
-            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .save-badge {
             background: #204a22;
-            color: #c8f0ca;
-            padding: 0.3rem 0.8rem;
+            color: white;
+            padding: 0.5rem 1rem;
             border-radius: 15px;
-            font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+            font-size: 0.9rem;
             font-weight: 700;
             margin: 0.5rem 0;
+            display: inline-block;
         }
 
-        .slider-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(32, 74, 34, 0.8);
+        .free-shipping {
+            background: #204a22;
             color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 1rem;
+            display: inline-block;
         }
-
-        .slider-nav:hover {
-            background: #204a22;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .slider-nav.prev {
-            left: -25px;
-        }
-
-        .slider-nav.next {
-            right: -25px;
-        }
-
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 2rem;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(32, 74, 34, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot.active {
-            background: #204a22;
-            transform: scale(1.2);
-        }
-
-        /* Mobile specific styles */
-        @media (max-width: 991px) {
-            .pricing-slider {
-                max-width: 300px;
-                max-height: fit-content;
-            }
-            
-            .pricing-card {
-                width: 280px;
-                margin: 0 auto;
-            }
-            .pricing-card.popular {
-                
-                max-height: 100%;
-                transform: scale(1);
-            }
-            .pricing-container {
-                width: calc(400% + 8rem);
-                height: fit-content;
-                margin: 0 auto;
-            }
-            
-            .slider-nav {
-                display: block;
-            }
-            
-            .slider-dots {
-                display: flex;
-            }
-        }
-
 
         .faq-section {
-    background: #eaf0ed;
-    padding-top: 3rem;
-    padding-bottom: 13rem;
-    
-    
-}
-        .slider-nav.next {
-            right: -25px;
+            background: #eaf0ed;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
         }
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 2rem;
+
+        .faq-item {
+            margin-bottom: 1rem;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(32, 74, 34, 0.3);
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #204a22;
+            padding: 1.5rem;
             cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            background: #f8f9fa;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #204a22;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6;
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
             transition: all 0.3s ease;
         }
-        .dot.active {
-            background: #204a22;
-            transform: scale(1.2);
-        }
-        /* Mobile specific styles */
-        @media (max-width: 768px) {
-            .pricing-slider {
-                max-width: 280px;
-            }
-            
-            .pricing-card {
-                width: 260px;
-            }
-            
-            .pricing-container {
-                width: calc(300% + 3rem);
-            }
-            
-            .slider-nav {
-                display: none;
-            }
-        }
 
+        .faq-answer.active {
+            max-height: 200px;
+            padding: 1.5rem;
+        }
 
         .preorder-container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 3rem auto;
             padding: 0 1rem;
         }
@@ -558,11 +568,47 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
+        .premium-waiting-list {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbf9 100%);
+            border: 2px solid #b2deb4;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(32, 74, 34, 0.15);
+            position: relative;
+            overflow: visible;
+        }
+
+        .premium-icon-container {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #204a22 0%, #3b8d3f 100%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(32, 74, 34, 0.3);
+        }
+
+        .premium-icon {
+            color: white;
+            font-size: 1.2rem;
+        }
+
         .preorder-header {
             background: #eaeeef;
             color: #204a22;
             padding: 1.5rem;
             border-bottom: 1px solid #e0e0e0;
+        }
+
+        .premium-header {
+            background: linear-gradient(135deg, #b2deb4 0%, #d1e8d2 100%);
+            border-bottom: 1px solid #b2deb4;
+            padding: 2rem 1.5rem 1.5rem;
+            text-align: center;
         }
 
         .preorder-title {
@@ -571,9 +617,27 @@
             margin: 0;
         }
 
+        .premium-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            color: #204a22;
+        }
+
+        .premium-subtitle {
+            font-size: 1rem;
+            color: #26522a;
+            margin: 0;
+            font-weight: 400;
+        }
+
         .preorder-body {
             padding: 1.5rem;
             text-align: center;
+        }
+
+        .premium-body {
+            padding: 2rem 1.5rem;
         }
 
         .preorder-content {
@@ -583,9 +647,64 @@
             margin-bottom: 1.5rem;
         }
 
+        .premium-content {
+            margin-bottom: 2rem;
+        }
+
+        .premium-feature-box {
+            background: linear-gradient(135deg, #f0f9f1 0%, #e8f5e9 100%);
+            border: 1px solid #b2deb4;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .premium-feature-icon {
+            color: #204a22;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .premium-contact-section {
+            margin: 1.5rem 0;
+        }
+
+        .premium-contact-text {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .premium-phone-display {
+            background: linear-gradient(135deg, #204a22 0%, #3b8d3f 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 1rem 0;
+            box-shadow: 0 5px 15px rgba(32, 74, 34, 0.2);
+        }
+
+        .whatsapp-icon {
+            font-size: 1.5rem;
+        }
+
         .phone-number {
             color: #204a22;
             font-weight: 600;
+        }
+
+        .premium-phone {
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
         }
 
         .warning-text {
@@ -598,42 +717,79 @@
             color: #26522a;
         }
 
-        .cta-button {
+        .premium-warning-text {
+            background: linear-gradient(135deg, #fff3cd 0%, #fef3e2 100%);
+            border: 1px solid #f0c674;
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            text-align: left;
+        }
+
+        .warning-icon {
+            color: #856404;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .warning-content {
+            color: #856404;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .premium-cta-button {
+            background: linear-gradient(135deg, #204a22 0%, #3b8d3f 100%);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            background: #204a22;
+            gap: 0.8rem;
+            box-shadow: 0 8px 25px rgba(32, 74, 34, 0.3);
+        }
+
+        .premium-cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .premium-cta-button:hover::before {
+            left: 100%;
+        }
+
+        .premium-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(32, 74, 34, 0.4);
             color: white;
             text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: background 0.2s ease;
         }
 
-        .cta-button:hover {
-            background: #1a3d1e;
-            color: white;
+        .arrow-icon {
+            transition: transform 0.3s ease;
         }
-        .faq-item {
-    margin-bottom: 2rem;
-}
 
-.faq-question {
-    font-weight: bold;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #000000;
-}
-
-.faq-answer {
-    font-size: 0.95rem;
-    color: #000000;
-    line-height: 1.6;
-    padding-bottom: 2rem;
-}
-
-    
+        .premium-cta-button:hover .arrow-icon {
+            transform: translateX(5px);
+        }
 
         .footer {
             background: #000000;
@@ -720,141 +876,270 @@
         }
 
         .usp-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);  /* 3 icons per row for mobile */
-    gap: 0.3rem;
-    justify-content: center; /* Centers the grid in its container */
-    text-align: center; 
-    margin-bottom: 3rem;
-    padding-top: 2rem;
-    margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+        }
 
-}
-
-    /* Tablet Landscape */
-    @media (min-width: 768px) {
-    .usp-grid {
-        grid-template-columns: repeat(3, 1fr);  /* 3 icons per row for tablets and desktops */
-    }
-}
-
-        /* Mobile Optimizations */
-        @media (max-width: 200px) {
-            .section {
-                padding: 2rem 1rem;
-            }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            .hero-badge {
-                padding: 0.4rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            
-
-            
-            .usp-card {
-                padding: 0.2rem;
-                
-            }
-            
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .pricing-card {
-                padding: 1.2rem;
-            }
-            
-            .pricing-card.popular {
-                transform: scale(1);
-            }
-            
-            .team-content {
-                gap: 1.5rem;
-            }
-            
-            .nutrition-table {
-            margin: 2rem 0;
-            border-radius: 0;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-            }
-            
-            .nutrition-table th,
-            .nutrition-table td {
-            padding: clamp(0.5rem, 1.5vw, 0.8rem);
-            text-align: left;
-            border-bottom: 1px solid #e0e0e0;
-            }
-            
-            .cta-button {
-                padding: 0.8rem 1.5rem;
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .whatsapp-float {
-                bottom: 15px;
-                right: 15px;
-                width: 45px;
-                height: 45px;
-            }
-            
-            .whatsapp-float img {
-                width: 25px !important;
-                height: 25px !important;
+        @media (min-width: 768px) {
+            .usp-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        /* Small Mobile Devices */
-        @media (max-width: 480px) {
-            .hero-section {
-                min-height: 400px;
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .steps-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .gold-members-section {
+            background: #d1e8d2;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .gold-member-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .gold-member-text {
+            width: 100%;
+        }
+
+        .gold-members-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .gold-members-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .gold-member-card {
+            text-align: center;
+        }
+
+        .gold-member-card .usp-icon {
+            background-color: #204a22;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            * {
+                max-width: 100vw;
+                box-sizing: border-box;
+            }
+
+            html, body {
+                overflow-x: hidden;
+                width: 100%;
+                max-width: 100vw;
             }
             
             .section {
                 padding: 1.5rem 0.5rem;
+                width: 100%;
+                max-width: 100vw;
+                box-sizing: border-box;
             }
-            
+
             .container {
                 padding: 0 0.5rem;
+                width: 100%;
+                max-width: 100vw;
+                box-sizing: border-box;
             }
-            
-            .usp-card,
+
+            .pricing-container {
+                display: none;
+            }
+
+            .pricing-slider-container {
+                display: block;
+                width: 100%;
+                max-width: 100vw;
+                box-sizing: border-box;
+                padding: 0 0.5rem;
+                overflow: visible;
+            }
+
+            .pricing-slider {
+                width: 300%;
+                max-width: 300vw;
+            }
+
+            .pricing-slide {
+                width: 33.333%;
+                flex-shrink: 0;
+                padding: 20px 0.25rem 0;
+                box-sizing: border-box;
+                overflow: visible;
+            }
+
             .pricing-card {
-                padding: 1rem;
+                width: 100%;
+                max-width: 100%;
+                min-width: auto;
+                margin: 0 auto;
+                padding: 1rem 0.75rem;
+                box-sizing: border-box;
+                font-size: 0.9rem;
             }
-            
-            .modal-content {
-                margin: 20% auto;
+
+            .pricing-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .pricing-card.popular {
+                transform: none;
+            }
+
+            .pricing-card.popular:hover {
+                transform: translateY(-10px);
+            }
+
+            .hero-content {
+                padding: 0 0.5rem;
+                width: 100%;
+                max-width: 100vw;
+                box-sizing: border-box;
+            }
+
+            .preorder-container {
+                padding: 0 0.5rem;
+                width: 100%;
+                max-width: 100vw;
+                box-sizing: border-box;
+            }
+
+            .nutrition-card {
+                margin: 2rem auto;
                 padding: 1.5rem;
+                max-width: 350px;
             }
-        }
 
-        /* Large Desktop Screens */
-        @media (min-width: 300px) {
+            .nutrition-header {
+                font-size: 1.3rem;
+            }
+
+            .nutrition-item {
+                margin-bottom: 1.2rem;
+                padding-bottom: 0.8rem;
+            }
+
+            .nutrition-main-label {
+                font-size: 0.95rem;
+            }
+
+            .nutrition-sub-label {
+                font-size: 0.85rem;
+            }
+
+            .nutrition-comparison {
+                font-size: 0.8rem;
+            }
+
             .team-content {
-                grid-template-columns: 1fr 1fr;
-                gap: 4rem;
+                gap: 1.5rem;
             }
-            
-            .section {
-                padding: 0rem 2rem;
+
+            .usp-grid {
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .steps-grid {
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .gold-members-grid {
+                gap: 1.5rem;
+            }
+
+            .gold-members-section {
+                padding: 2rem 1rem;
+            }
+
+            .price-amount {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: clamp(1.5rem, 4vw, 2.5rem);
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .premium-feature-box {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .premium-phone-display {
+                padding: 0.8rem 1rem;
+                font-size: 0.95rem;
+            }
+
+            .premium-cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .save-badge, .free-shipping {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .popular-badge {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .gold-member-content {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+                gap: 1rem;
+            }
+
+            .gold-member-content .usp-icon {
+                flex-shrink: 0;
+                margin: 0;
+            }
+
+            .gold-member-text {
+                flex: 1;
+            }
+
+            .gold-member-text .usp-title {
+                text-align: left;
+                margin-bottom: 0.5rem;
+            }
+
+            .gold-member-text p {
+                text-align: center;
+                margin-top: 0.5rem;
             }
         }
-
-    
-
-            
-            .pricing-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        
     </style>
 </head>
 <body>
@@ -878,34 +1163,36 @@
         <div class="container">
             <div class="usp-grid">
                 <div class="usp-card">
-                    <i class="fas fa-dumbbell usp-icon"></i>
+                    <div class="usp-icon">
+                        <img src="muscles.png" alt="Protein" style="width: 30px; height: 30px; object-fit: contain;">
+                    </div>
                     <h3 class="usp-title">75g of Protein per Liter</h3>
-                    <p class="usp-text">Packed with high-quality protein to fuel your fitness goals</p>
                 </div>
                 <div class="usp-card">
-                    <i class="fas fa-glass-cheers usp-icon"></i>
+                    <div class="usp-icon">
+                        <img src="Regular Milk.png" alt="Regular Milk" style="width: 30px; height: 30px; object-fit: contain;">
+                    </div>
                     <h3 class="usp-title">Tastes like Regular Milk</h3>
-                    <p class="usp-text">No artificial aftertaste - just pure, delicious milk flavor</p>
                 </div>
                 <div class="usp-card">
-                    <i class="fas fa-heart usp-icon"></i>
+                    <div class="usp-icon">
+                        <img src="fat.png" alt="Low Fat" style="width: 30px; height: 30px; object-fit: contain;">
+                    </div>
                     <h3 class="usp-title">0.9% Fat</h3>
-                    <p class="usp-text">Low-fat formula for a healthier lifestyle</p>
                 </div>
                 <div class="usp-card">
                     <i class="fas fa-leaf usp-icon"></i>
                     <h3 class="usp-title">100% Natural</h3>
-                    <p class="usp-text">Made from real cow's milk with no artificial additives</p>
                 </div>
                 <div class="usp-card">
                     <i class="fas fa-coffee usp-icon"></i>
                     <h3 class="usp-title">Versatile Use</h3>
-                    <p class="usp-text">Perfect for coffee, cereals, or protein shakes</p>
                 </div>
                 <div class="usp-card">
-                    <i class="fas fa-flag usp-icon"></i>
+                    <div class="usp-icon">
+                        <img src="germany flag.png" alt="Germany Flag" style="width: 30px; height: 30px; object-fit: contain;">
+                    </div>
                     <h3 class="usp-title">Made in Germany</h3>
-                    <p class="usp-text">First high protein milk available in South Africa</p>
                 </div>
             </div>
             <div style="text-align: center;">
@@ -916,61 +1203,67 @@
         </div>
     </section>
 
-    <!-- Nutrition Table -->
+    <!-- Nutrition Card -->
     <section class="section">
         <div class="container">
-            <div class="nutrition-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nutritional Information</th>
-                            <th>Per 100ml</th>
-                            <th>Comparison to Regular Milk</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Calories</strong></td>
-                            <td class="highlight">$3 kcal</td>
-                            <td class="note">16% less than regular milk</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Fat</strong></td>
-                            <td class="highlight">0.9 g</td>
-                            <td class="note">77% less than regular milk</td>
-                        </tr>
-                        <tr>
-                            <td>of which saturated fat</td>
-                            <td>0.62 g</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Carbohydrates</strong></td>
-                            <td>4.8 g</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>of which sugar</td>
-                            <td>4.5 g</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Protein</strong></td>
-                            <td class="highlight">7.5 g</td>
-                            <td class="note">120% more than regular milk</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Salt</strong></td>
-                            <td>0.12 g</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Calcium**</strong></td>
-                            <td class="highlight">240 mg</td>
-                            <td class="note">**30% of nutrient reference values (NRV)</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="nutrition-card">
+                <div class="nutrition-header">Nutritional Information</div>
+                <div class="nutrition-subtitle">per 100ml</div>
+                
+                <div class="nutrition-item">
+                    <div class="nutrition-label">
+                        <div class="nutrition-main-label">Calories</div>
+                        <div class="nutrition-comparison">16% less than regular milk</div>
+                    </div>
+                    <div class="nutrition-value highlight-value">53 kcal</div>
+                </div>
+
+                <div class="nutrition-item">
+                    <div class="nutrition-label">
+                        <div class="nutrition-main-label">Fat</div>
+                        <div class="nutrition-sub-label">of which saturated fat</div>
+                        <div class="nutrition-comparison">77% less fat than regular milk</div>
+                    </div>
+                    <div class="nutrition-value">
+                        <div class="highlight-value">0.9 g</div>
+                        <div style="font-size: 0.9rem; color: #666;">0.6 g</div>
+                    </div>
+                </div>
+
+                <div class="nutrition-item">
+                    <div class="nutrition-label">
+                        <div class="nutrition-main-label">Carbohydrates</div>
+                        <div class="nutrition-sub-label">of which sugar</div>
+                    </div>
+                    <div class="nutrition-value">
+                        <div>4.8 g</div>
+                        <div style="font-size: 0.9rem; color: #666;">4.5 g</div>
+                    </div>
+                </div>
+
+                <div class="nutrition-item">
+                    <div class="nutrition-label">
+                        <div class="nutrition-main-label">Protein</div>
+                        <div class="nutrition-comparison">120% more protein than regular milk</div>
+                    </div>
+                    <div class="nutrition-value highlight-value">7.5 g</div>
+                </div>
+
+                <div class="nutrition-item">
+                    <div class="nutrition-label">
+                        <div class="nutrition-main-label">Salt</div>
+                    </div>
+                    <div class="nutrition-value">0.12 g</div>
+                </div>
+
+                <div class="nutrition-item">
+                    <div class="nutrition-label">
+                        <div class="nutrition-main-label">Calcium</div>
+                    </div>
+                    <div class="nutrition-value highlight-value">240 mg</div>
+                </div>
+
+                <div class="calcium-note">*30% of NRV</div>
             </div>
         </div>
     </section>
@@ -985,9 +1278,9 @@
                 </div>
                 <div class="team-text">
                     <p>We are Joshua and Manuel - two friends who share a passion for fitness and a healthy lifestyle. Joshua, from Cape Town, has years of experience in the nutritional supplements and health products industry in South Africa. Manuel is originally from Europe and has already established and managed companies with a focus on import/export and logistics in the past.</p>
-                    
+
                     <p>Together we have made it our mission to introduce some of Europe's most popular and innovative protein-rich foods to the South African market -- starting with Germany's popular high-protein milk.</p>
-                    
+
                     <p>We believe that better nutrition should be both delicious and accessible. Whether you're interested in fitness and healthy living, or simply want to make smarter food choices, we're here to bring the best European protein innovations to your shelves.</p>
                 </div>
             </div>
@@ -997,32 +1290,30 @@
     <!-- Pre-Order Sale Section -->
     <section class="section pricing-section">
         <div class="container">
-            <h2 class="section-title" style="color: rgb(0, 0, 0);">Pre-Order Sale</h2>
+            <h2 class="section-title">Pre-Order Sale</h2>
             <p style="text-align: center; font-size: clamp(1rem, 2vw, 1.2rem); margin-bottom: 2rem;">If you want to be one of the first to have high-protein milk from Europe in your shelf, follow the steps below:</p>
-            
-            <div class="usp-grid" style="margin-bottom: 3rem;">
-                <div class="usp-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                    <i class="fas fa-phone usp-icon" style="color: #204a22;;"></i>
-                    <h3 class="usp-title" style="color: rgb(0, 0, 0);">1. Get in Touch with Us</h3>
+
+            <div class="steps-grid">
+                <div class="usp-card">
+                    <i class="fab fa-whatsapp usp-icon"></i>
+                    <h3 class="usp-title">1. Get in Touch with Us</h3>
                 </div>
-                <div class="usp-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                    <i class="fas fa-box usp-icon" style="color: #204a22;;"></i>
-                    <h3 class="usp-title" style="color: rgb(0, 0, 0);">2. Choose your Package</h3>
+                <div class="usp-card">
+                    <i class="fas fa-box usp-icon"></i>
+                    <h3 class="usp-title">2. Choose your Package</h3>
                 </div>
-                <div class="usp-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                    <i class="fas fa-credit-card usp-icon" style="color: #204a22;;"></i>
-                    <h3 class="usp-title" style="color: rgb(0, 0, 0);">3. Transfer 50% Deposit</h3>
+                <div class="usp-card">
+                    <i class="fas fa-credit-card usp-icon"></i>
+                    <h3 class="usp-title">3. Transfer 50% Deposit</h3>
                 </div>
-                <div class="usp-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                    <i class="fas fa-truck usp-icon" style="color: #204a22;;"></i>
-                    <h3 class="usp-title" style="color: rgb(0, 0, 0);">4. Delivery Q4 2025 - Q1 2026</h3>
+                <div class="usp-card">
+                    <i class="fas fa-truck usp-icon"></i>
+                    <h3 class="usp-title">4. Delivery Q4 2025 - Q1 2026</h3>
                 </div>
             </div>
-            
+
             <div style="text-align: center; background: #eaefef; padding: 1.5rem; border-radius: 15px; margin-bottom: 3rem;">
-                <!-- Help Icon -->
-                <i class="bi bi-question-circle" style="color: #204a22; font-size: 1.5rem; cursor: pointer; margin-bottom: 1rem;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Need help? Contact our support team!"></i>
-                
+                <img src="question mark.png" alt="Question Mark" style="width: 30px; height: 30px; margin-bottom: 1rem;">
                 <h3 style="color: #204a22; margin-bottom: 1rem; font-size: clamp(1.2rem, 3vw, 1.5rem);">100% Money Back Guarantee!</h3>
                 <p style="font-size: clamp(0.9rem, 2vw, 1rem);">In case we are not able to provide you with the products we will transfer 100% of your deposit back.</p>
             </div>
@@ -1031,137 +1322,218 @@
                 <h3 style="color: #204a22; margin-bottom: 2rem; font-size: clamp(1.5rem, 4vw, 2rem);">ORDER NOW AND SAVE UP TO 25%</h3>
             </div>
 
-            <div class="container">
-                <div class="pricing-section">
-                    <div class="pricing-slider" id="pricingSlider">
-                        <button class="slider-nav prev" onclick="previousSlide()">
-                            <i class="bi bi-chevron-left"></i>
-                        </button>
-                        
-                        <div class="pricing-container" id="pricingContainer">
-                            <div class="pricing-card">
-                                <h3>Single Unit</h3>
-                                <div class="price-original">Store Price: R 119.0</div>
-                                <div class="price-amount">R 99.0</div>
-                                <div class="save-badge">17% OFF</div>
-                                <p style="margin: 1rem 0;">Perfect for trying out</p>
-                                <small>+ R50 shipping</small>
-                            </div>
-                            
-                            <div class="pricing-card popular">
-                                <div class="popular-badge">MOST POPULAR</div>
-                                <h3>6 Units Pack</h3>
-                                <div class="price-original">Store Price: R 654.0</div>
-                                <div class="price-amount">R 534.0</div>
-                                <div class="save-badge">18% OFF + FREE SHIPPING</div>
-                                <p style="margin: 1rem 0;">R 89.0 per unit</p>
-                                <div style="background: #204a22; color: #b2deb4; border-radius: 10px; font-weight: 700;">FREE SHIPPING</div>
-                            </div>
-                            
-                            <div class="pricing-card">
-                                <h3>12 Units Pack</h3>
-                                <div class="price-original">Store Price: R 1,198.8</div>
-                                <div class="price-amount">R 898.8</div>
-                                <div class="save-badge">25% OFF + FREE SHIPPING</div>
-                                <p style="margin: 1rem 0;">R 74.9 per unit</p>
-                                <div style="background: #204a22; color: #b2deb4; padding: 0.5rem; border-radius: 10px; font-weight: 700;">FREE SHIPPING</div>
-                            </div>
+            <!-- Desktop Pricing Container -->
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <div style="height: 20px; margin-bottom: 10px;"></div>
+                    <h3>Single Unit</h3>
+                    <div class="price-original">Store Price: R 119.0 per unit</div>
+                    <div class="price-amount">R 99.0</div>
+                    <div class="save-badge">17% OFF</div>
+                    <p style="margin: 1rem 0;">Perfect for trying out</p>
+                    <small style="display: block; margin-top: 0.5rem;">Package: R 99.0</small>
+                    <small style="display: block; margin-top: 0.5rem;">+ R50 shipping</small>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3>6 Units Pack</h3>
+                    <div class="price-original">Store Price: R 109.0 per unit</div>
+                    <div class="price-amount">R 89.0</div>
+                    <div class="save-badge">18% OFF</div>
+                    <p style="margin: 1rem 0;"><strong>per unit</strong></p>
+                    <small style="display: block; margin-top: 0.5rem;">Package: R 534.0</small>
+                    <div class="free-shipping">FREE SHIPPING</div>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>12 Units Pack</h3>
+                    <div class="price-original">Store Price: R 99.9 per unit</div>
+                    <div class="price-amount">R 74.9</div>
+                    <div class="save-badge">25% OFF</div>
+                    <p style="margin: 1rem 0;"><strong>per unit</strong></p>
+                    <small style="display: block; margin-top: 0.5rem;">Package: R 898.8</small>
+                    <div class="free-shipping">FREE SHIPPING</div>
+                </div>
+            </div>
+
+            <!-- Mobile Pricing Slider -->
+            <div class="pricing-slider-container">
+                <div class="pricing-slider" id="pricingSlider">
+                    <div class="pricing-slide">
+                        <div class="pricing-card">
+                            <div style="height: 20px; margin-bottom: 10px;"></div>
+                            <h3>Single Unit</h3>
+                            <div class="price-original">Store Price: R 119.0 per unit</div>
+                            <div class="price-amount">R 99.0</div>
+                            <div class="save-badge">17% OFF</div>
+                            <p style="margin: 1rem 0;">Perfect for trying out</p>
+                            <small style="display: block; margin-top: 0.5rem;">Package: R 99.0</small>
+                            <small style="display: block; margin-top: 0.5rem;">+ R50 shipping</small>
                         </div>
-                        
-                        <button class="slider-nav next" onclick="nextSlide()">
-                            <i class="bi bi-chevron-right"></i>
-                        </button>
                     </div>
-                    
-                    <div class="slider-dots" id="sliderDots">
-                        <div class="dot active" onclick="goToSlide(0)"></div>
-                        <div class="dot" onclick="goToSlide(1)"></div>
-                        <div class="dot" onclick="goToSlide(2)"></div>
+                    <div class="pricing-slide">
+                        <div class="pricing-card popular">
+                            <div class="popular-badge">MOST POPULAR</div>
+                            <h3>6 Units Pack</h3>
+                            <div class="price-original">Store Price: R 109.0 per unit</div>
+                            <div class="price-amount">R 89.0</div>
+                            <div class="save-badge">18% OFF</div>
+                            <p style="margin: 1rem 0;"><strong>per unit</strong></p>
+                            <small style="display: block; margin-top: 0.5rem;">Package: R 534.0</small>
+                            <div class="free-shipping">FREE SHIPPING</div>
+                        </div>
                     </div>
+                    <div class="pricing-slide">
+                        <div class="pricing-card">
+                            <h3>12 Units Pack</h3>
+                            <div class="price-original">Store Price: R 99.9 per unit</div>
+                            <div class="price-amount">R 74.9</div>
+                            <div class="save-badge">25% OFF</div>
+                            <p style="margin: 1rem 0;"><strong>per unit</strong></p>
+                            <small style="display: block; margin-top: 0.5rem;">Package: R 898.8</small>
+                            <div class="free-shipping">FREE SHIPPING</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-indicators">
+                    <div class="slider-dot" onclick="goToSlide(0)"></div>
+                    <div class="slider-dot active" onclick="goToSlide(1)"></div>
+                    <div class="slider-dot" onclick="goToSlide(2)"></div>
                 </div>
             </div>
 
             <div class="preorder-container">
-                <div class="preorder-box">
-                    <div class="preorder-header">
-                        <h3 class="preorder-title">Join Our Waiting List</h3>
+                <div class="preorder-box premium-waiting-list">
+                    <div class="premium-icon-container">
+                        <i class="fas fa-star premium-icon"></i>
                     </div>
                     
-                    <div class="preorder-body">
-                        <div class="preorder-content">
-                            <p>You can also join our waiting list and will be notified as soon as the products are in South Africa. Simply write to us via WhatsApp <span class="phone-number">+27 (73) 260-6636</span>.</p>
+                    <div class="preorder-header premium-header">
+                        <h3 class="preorder-title premium-title">Join Our Exclusive Waiting List</h3>
+                        <p class="premium-subtitle">Be the first to know when we arrive in South Africa</p>
+                    </div>
+
+                    <div class="preorder-body premium-body">
+                        <div class="preorder-content premium-content">
+                            <div class="premium-feature-box">
+                                <i class="fas fa-bell premium-feature-icon"></i>
+                                <p>Get instant notification as soon as the products are available in South Africa</p>
+                            </div>
                             
-                            <div class="warning-text">
-                                <strong>Note:</strong> We cannot guarantee product availability and prices will be higher compared to pre-order sale.
+                            <div class="premium-contact-section">
+                                <p class="premium-contact-text">Connect with us on WhatsApp</p>
+                                <div class="premium-phone-display">
+                                    <i class="fab fa-whatsapp whatsapp-icon"></i>
+                                    <span class="phone-number premium-phone">+27 (73) 260-6636</span>
+                                </div>
+                            </div>
+
+                            <div class="premium-warning-text">
+                                <i class="fas fa-info-circle warning-icon"></i>
+                                <div class="warning-content">
+                                    <strong>Important Notice:</strong> Product availability cannot be guaranteed and prices will be higher compared to our exclusive pre-order sale.
+                                </div>
                             </div>
                         </div>
-                        
-                        <a href="#" class="cta-button" onclick="openWhatsApp()">
+
+                        <a href="#" class="premium-cta-button" onclick="openWhatsApp()">
                             <i class="fab fa-whatsapp"></i>
-                            Contact via WhatsApp
+                            <span>Join Waiting List</span>
+                            <i class="fas fa-arrow-right arrow-icon"></i>
                         </a>
                     </div>
-        </div>
-    </section>
-
-    <!-- Gold Members Benefits -->
-    <section position="center" class="section" style="padding: 4rem 3rem;">
-        <div class="container">
-          <h2 class="section-title">Join the first - and benefit exclusively!</h2>
-            <div style="background: #d1e8d2; padding: 3rem; border-radius: 20px; text-align: center;">
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Order now at the pre-sale and you will automatically receive a free membership in our Gold Members Club. As a Gold Member you enjoy exclusive benefits:</p>
-                
-                <div class="usp-grid">
-                    <div class="usp-card">
-                        <i class="fas fa-star usp-icon"></i>
-                        <h3 class="usp-title">Special Discounts</h3>
-                        <p class="usp-text">Exclusive offers for members only</p>
-                    </div>
-                    <div class="usp-card">
-                        <i class="fas fa-crown usp-icon"></i>
-                        <h3 class="usp-title">Priority Orders</h3>
-                        <p class="usp-text">You order first for future batches</p>
-                    </div>
-                    <div class="usp-card">
-                        <i class="fas fa-rocket usp-icon"></i>
-                        <h3 class="usp-title">Early Access</h3>
-                        <p class="usp-text">New products like skyr, quark, protein noodles before official launch</p>
-                    </div>
                 </div>
-                
-                <p style="font-style: italic; color: #204a22; font-weight: 700; margin-top: 2rem;">These benefits are reserved exclusively for our first supporters - join us and secure your place!</p>
             </div>
         </div>
     </section>
 
-  
-<!-- FAQ Section -->
-<section class="section faq-section">
-    <div class="container">
-        <h2 class="section-title">Frequently Asked Questions</h2>
+    <!-- Gold Members Benefits -->
+    <section class="section" style="padding: 4rem 3rem; background: #d1e8d2;">
+        <div class="container">
+            <h2 class="section-title">Join the first - and benefit exclusively!</h2>
+            <div class="gold-members-section">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Order now at the pre-sale and you will automatically receive a free membership in our Gold Members Club. As a Gold Member you enjoy exclusive benefits:</p>
 
-        <div class="faq-item">
-            <p class="faq-question">Does it really taste like milk?</p>
-            <p class="faq-answer">Yes, it does taste exactly like usual milk.</p>
+                <div class="gold-members-grid">
+                    <div class="gold-member-card">
+                        <div class="gold-member-content">
+                            <div class="usp-icon">
+                                <img src="discount.png" alt="Special Discounts" style="width: 30px; height: 30px; object-fit: contain;">
+                            </div>
+                            <div class="gold-member-text">
+                                <h3 class="usp-title">Special Discounts</h3>
+                                <p style="color: #333; margin-top: 0.5rem;">Exclusive offers for members only</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gold-member-card">
+                        <div class="gold-member-content">
+                            <i class="fas fa-crown usp-icon"></i>
+                            <div class="gold-member-text">
+                                <h3 class="usp-title">Priority Orders</h3>
+                                <p style="color: #333; margin-top: 0.5rem;">You order first for future batches</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gold-member-card">
+                        <div class="gold-member-content">
+                            <i class="fas fa-rocket usp-icon"></i>
+                            <div class="gold-member-text">
+                                <h3 class="usp-title">Early Access</h3>
+                                <p style="color: #333; margin-top: 0.5rem;">New products like skyr, quark, protein noodles before official launch</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="color: #204a22; font-weight: 700; margin-top: 2rem;">These benefits are reserved exclusively for our first supporters - join us and secure your place!</p>
+            </div>
         </div>
+    </section>
 
-        <div class="faq-item">
-            <p class="faq-question">Does it have a funny aftertaste like whey protein?</p>
-            <p class="faq-answer">No, our high protein milk tastes exactly like normal milk without any funny aftertaste.</p>
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Does it really taste like milk?
+                </div>
+                <div class="faq-answer">
+                    Yes, it does taste exactly like usual milk.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Does it have a funny aftertaste like whey protein?
+                </div>
+                <div class="faq-answer">
+                    No, our high protein milk tastes exactly like normal milk without any funny aftertaste.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Where is it produced?
+                </div>
+                <div class="faq-answer">
+                    Our high-protein milk is made in Germany following the highest quality standards.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    When will I receive my order?
+                </div>
+                <div class="faq-answer">
+                    Delivery will take place between Q4 2025 and Q1 2026. We'll keep you updated along the way!
+                </div>
+            </div>
         </div>
-
-        <div class="faq-item">
-            <p class="faq-question">Where is it produced?</p>
-            <p class="faq-answer">Our high-protein milk is made in Germany following the highest quality standards.</p>
-        </div>
-
-        <div class="faq-item">
-            <p class="faq-question">When will I receive my order?</p>
-            <p class="faq-answer">Delivery will take place between Q4 2025 and Q1 2026. We’ll keep you updated along the way!</p>
-        </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -1173,27 +1545,27 @@
         <p>&copy; 2025 High Protein Milk. All rights reserved.</p>
     </footer>
 
-    <!-- WhatsApp Floating Button with Static Image -->
+    <!-- WhatsApp Floating Button -->
     <a class="whatsapp-float" href="https://wa.me/27732606636" target="_blank">
         <img src="WhatsApp.webp" alt="WhatsApp" style="width: 30px; height: 30px; border-radius: 10%;">
     </a>
 
-
-
-    <!-- Modal for Pre-Order Success (Optional Feature) -->
+    <!-- Modal for Pre-Order Success -->
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>Thank you for your interest!</h2>
-            <p>We’ll get in touch with you shortly via WhatsApp to confirm your pre-order.</p>
+            <p>We'll get in touch with you shortly via WhatsApp to confirm your pre-order.</p>
         </div>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
         // Toggle FAQ
         function toggleFAQ(element) {
             const answer = element.nextElementSibling;
+            element.classList.toggle('active');
             answer.classList.toggle('active');
         }
 
@@ -1216,113 +1588,92 @@
             }
         }
 
-        let currentSlide = 0;
+        // Pricing Slider Functionality
+        let currentSlide = 1; // Start with middle slide (6 Units Pack)
         const totalSlides = 3;
         let startX = 0;
-        let currentX = 0;
-        let isDragging = false;
+        let endX = 0;
 
-        function updateSlider() {
-            const container = document.getElementById('pricingContainer');
-            const cardWidth = 295; // card width + gap
-            const offset = -currentSlide * cardWidth;
-            container.style.transform = `translateX(${offset}px)`;
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            const slider = document.getElementById('pricingSlider');
+            const translateX = -slideIndex * 33.333;
+            slider.style.transform = `translateX(${translateX}%)`;
             
-            // Update dots
-            const dots = document.querySelectorAll('.dot');
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
+            // Update indicators
+            document.querySelectorAll('.slider-dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === slideIndex);
             });
         }
 
+        // Initialize slider to center slide on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            goToSlide(1); // Start with 6 Units Pack (index 1)
+        });
+
         function nextSlide() {
             currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlider();
+            goToSlide(currentSlide);
         }
 
-        function previousSlide() {
+        function prevSlide() {
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateSlider();
+            goToSlide(currentSlide);
         }
 
-        function goToSlide(index) {
-            currentSlide = index;
-            updateSlider();
-        }
-
-        // Touch/swipe functionality
-        const container = document.getElementById('pricingContainer');
-
-        container.addEventListener('touchstart', (e) => {
+        // Touch/Swipe Events
+        const slider = document.getElementById('pricingSlider');
+        
+        slider.addEventListener('touchstart', function(e) {
             startX = e.touches[0].clientX;
-            isDragging = true;
         });
 
-        container.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            currentX = e.touches[0].clientX;
+        slider.addEventListener('touchmove', function(e) {
+            e.preventDefault();
         });
 
-        container.addEventListener('touchend', (e) => {
-            if (!isDragging) return;
-            
-            const diffX = startX - currentX;
-            const threshold = 50;
-            
-            if (Math.abs(diffX) > threshold) {
-                if (diffX > 0) {
-                    nextSlide();
-                } else {
-                    previousSlide();
-                }
-            }
-            
-            isDragging = false;
+        slider.addEventListener('touchend', function(e) {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
         });
 
-        // Mouse drag functionality for desktop
-        container.addEventListener('mousedown', (e) => {
+        // Mouse events for desktop testing
+        slider.addEventListener('mousedown', function(e) {
             startX = e.clientX;
-            isDragging = true;
-            container.style.cursor = 'grabbing';
+            slider.style.cursor = 'grabbing';
         });
 
-        container.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            currentX = e.clientX;
+        slider.addEventListener('mousemove', function(e) {
+            if (startX !== 0) {
+                e.preventDefault();
+            }
         });
 
-        container.addEventListener('mouseup', (e) => {
-            if (!isDragging) return;
-            
-            const diffX = startX - currentX;
-            const threshold = 50;
-            
-            if (Math.abs(diffX) > threshold) {
-                if (diffX > 0) {
+        slider.addEventListener('mouseup', function(e) {
+            if (startX !== 0) {
+                endX = e.clientX;
+                handleSwipe();
+                slider.style.cursor = 'grab';
+                startX = 0;
+            }
+        });
+
+        function handleSwipe() {
+            const threshold = 50; // Minimum distance for a swipe
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    // Swiped left - go to next slide
                     nextSlide();
                 } else {
-                    previousSlide();
+                    // Swiped right - go to previous slide
+                    prevSlide();
                 }
             }
-            
-            isDragging = false;
-            container.style.cursor = 'grab';
-        });
-
-        container.addEventListener('mouseleave', () => {
-            isDragging = false;
-            container.style.cursor = 'grab';
-        });
-
-        // Auto-slide functionality (optional)
-        setInterval(() => {
-            nextSlide();
-        }, 5000);
-
-        // Initialize
-        updateSlider();
+            startX = 0;
+            endX = 0;
+        }
     </script>
-
 </body>
 </html>
